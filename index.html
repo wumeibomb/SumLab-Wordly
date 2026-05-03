@@ -1,0 +1,40 @@
+<!-- search bar (inout anf submit buttom), section for results, placeholders for word definitions and audio-->
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title>FLOPtionary</title>
+        <meta charset="UTF-8">
+        <link href = "style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <form id="searchform" class="searchform" ></form>
+        <input 
+           type = "text"
+           id = "wordsearch"
+           placeholder="NMIXX"
+           autocomplete="off"
+           class = "wordsearch"
+           name = "FLOP"
+           >
+           <button onclick = "fetchWORD()" class="btn-input">Crescendo</button>
+    <div id = "wordContainer" class = "wordCont">
+             <div class = "wordDesc">
+        <h1 id = "SearchedWord"> Hello </h1> <!-- word -->
+        <h2 id="wordDesc">Desc</h2><!--desc, meanings + phonetics-->
+        <audio id ="audio" controls>
+            <source src ="" type="audio/mpeg"> <!--audio-->
+        </audio>
+        <div id = "morecontent">
+        <button id = "moremore"> more definitions</button>
+        <h2> Example: </h2>
+        <h3 id="example"> bruh </h3>
+        <h3 id = "more"> bruh</h3>
+        </div>
+     </div>
+</div>
+</form>
+   <script src="index.js"></script>
+        </body>
+ </html>
+
