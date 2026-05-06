@@ -14,44 +14,76 @@ async function fetchWORD() {
         const world = data[0].word
         const wordMeaning = data[0].meanings[0].definitions[0].definition
         const audio = data[0].phonetics[0].audio //only american pronounciation
-        const exampleusage = data[0].meanings[1].definitions[1].example
-        const exampleusage2 = data[0].meanings[0].definitions[0].example
+        const exampleusage = data[0].meanings[0].definitions[0].example
+        const exampleusage2 = data[0].meanings[1].definitions[0].example
         const exampleusage3 = data[0].meanings[2].definitions[0].example
 
-        if(exampleusage == undefined){
+        if(exampleusage == undefined ){
         const Example = document.getElementById("example").innerHTML =  "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
         const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
         const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
         const AUDIO = document.getElementById("audio").src = audio
-        const Example2 = document.getElementById("example2").innerHTML = exampleusage2
-        const Example3 = document.getElementById("example3").innerHTML =  "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        const Example2 = document.getElementById("example2").innerHTML = exampleusage2 
+        const Example3 = document.getElementById("example3").innerHTML =  exampleusage3
 
         }
-        if (exampleusage2 == undefined) {
+        else if (exampleusage2 == undefined) {
+        const Example = document.getElementById("example").innerHTML =  exampleusage 
+        const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
+        const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
+        const AUDIO = document.getElementById("audio").src = audio
+        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+      const Example3 = document.getElementById("example3").innerHTML = exampleusage3 
+        }
+        // words like cute and dream aren't working, I'm not sure why the 2nd else-if function isn't applying to them
+
+     if (exampleusage3 == undefined) {
+        const Example = document.getElementById("example").innerHTML =  exampleusage 
+        const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
+        const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
+        const AUDIO = document.getElementById("audio").src = audio
+        const Example2 = document.getElementById("example2").innerHTML = exampleusage2 
+      const Example3 = document.getElementById("example3").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        }
+
+        else if (exampleusage == undefined && exampleusage2 == undefined) {
+        const Example = document.getElementById("example").innerHTML =  "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
+        const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
+        const AUDIO = document.getElementById("audio").src = audio
+        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        const Example3 = document.getElementById("example3").innerHTML = exampleusage3 
+         }
+        
+        else if (exampleusage2 == undefined) {
+        const Example = document.getElementById("example").innerHTML =  exampleusage 
+        const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
+        const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
+        const AUDIO = document.getElementById("audio").src = audio
+        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        const Example3 = document.getElementById("example3").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        }
+        else if (exampleusage == undefined && exampleusage2 == undefined && exampleusage3 == undefined){
         const Example = document.getElementById("example").innerHTML =  exampleusage
         const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
         const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
         const AUDIO = document.getElementById("audio").src = audio
-        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
+        const Example2 = document.getElementById("example2").innerHTML = exampleusage2 
+        const Example3 = document.getElementById("example2").innerHTML = exampleusage3 
+
         }
-        // words like dream and hello aren't working yet...
-        if (exampleusage == undefined && exampleusage2 == undefined) {
+        else {
         const Example = document.getElementById("example").innerHTML =  "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
         const SearchedWord = document.getElementById("SearchedWord").innerHTML = world
         const wordDesc = document.getElementById("wordDesc").innerHTML = wordMeaning
         const AUDIO = document.getElementById("audio").src = audio
-        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>"
-        const Example3 = document.getElementById("example2").innerHTML = exampleusage3
+        const Example2 = document.getElementById("example2").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>" 
+        const Example3 = document.getElementById("example3").innerHTML = "<h3>Not available ᨳ𐔌՞҂ ˕ ֊՞𐦯ᜊ </h3>" 
         }
 }
     catch (error){
         console.error("ITS ME!", error)
     }
     
-}
-
-async function fetchDefs() {
-    //will update this sorrryyyyy
-    //words like speak show a not so common definition...
 }
 
